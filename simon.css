@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|VT323|Patua+One");
+
+:root{
+  --light: white;
+  --dark: #36384C;
+  --primary: black;
+}
+
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-size:1rem;
+}
+.container{
+  background-color: var(--dark);
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  position:relative;
+  text-align:center;
+  margin:auto;
+  top:10vh;
+}
+.wrapper{
+  margin: 10px 10px;
+  position:absolute;
+  height:480px;
+  width:480px;
+  border-radius:50%;
+}
+
+.pad{
+  margin:0;
+  float:left;
+  position:relative;
+  width:230px;
+  height:230px;
+  border: 5px solid var(--dark);
+}
+.padGreen{
+  border-top-left-radius:100%;
+  background-color:#00a74a;
+}
+.padGreen-active{
+  background-color:#13ff7c;
+}
+.padRed{
+  border-top-right-radius:100%;
+  background-color: #9f0f17;
+}
+.padRed-active{
+  background-color:red;
+}
+.padYellow{
+  border-bottom-left-radius: 100%;
+  background-color:#cca707;
+}
+.padYellow-active{
+  background-color:yellow;
+}
+.padBlue{
+  border-bottom-right-radius: 100%;
+  background-color:#094a8f;
+}
+.padBlue-active{
+  background-color:blue;
+}
+
+/* center controls section */
+.display{
+  background-color:var(--primary);
+  font-family: 'VT323', monospace;
+  font-size:2rem;
+  width:4rem;
+  height:2rem;
+  border-radius:4px;
+  color:red;
+}
+.btn:focus{
+  outline: none;
+}
+.start .btn{
+  background-color:red;
+}
+.strict .btn{
+  background-color:yellow;
+}
+.btn{
+  width:1.5rem;
+  height:1.5rem;
+  border-radius:50%;
+  border:3px solid var(--dark);
+  cursor:pointer;
+}
+.strict-led{
+  background-color:var(--primary);
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  margin-left:3rem;
+  position:relative;
+}
+.strict-led-on{
+  background-color:red;
+}
+.controls{
+  background-color:var(--light);
+  position:absolute;
+  top:25%;
+  left:25%;
+  z-index:1;
+  width:230px;
+  height:230px;
+  border: 10px solid var(--dark);
+  border-radius:50%;
+  display:grid;
+  justify-items: center;
+}
+.content{
+  display:grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "title"
+  "second_row"
+  "switchContainer";
+}
+.title{
+  grid-area:title;
+  font-family: 'Patua One', cursive;
+  font-size:3rem;
+  letter-spacing: 2px;
+  font-weight:bold;
+  padding-top:.5rem;
+  margin:0;
+}
+.second_row{
+  grid-area: second_row;
+  display:grid;
+  align-items: end;
+  padding-left:1rem;
+  padding-right:1rem;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: min-content;
+  grid-template-areas: 
+  "counter start strict";
+}
+.counter{
+  grid-area: counter;
+}
+.start{
+  grid-area:start;
+}
+.strict{
+  grid-area:strict;
+}
+
+.switchContainer{
+  grid-area:switchContainer;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat (3,auto);
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "OFF outer-switch ON ";
+}
+
+.OFF{
+  grid-area:OFF;
+  padding-right:.5rem;
+}
+.ON{
+  grid-area:ON;
+  padding-left:.5rem;
+}
+.outer-switch{
+  grid-area:outer-switch;
+  background-color:var(--dark);
+  border:1px solid var(--dark);
+  border-radius:2px;
+  width:2rem;
+  height:1rem;
+  cursor:pointer;
+  transition: all 300ms ease-in-out;
+  margin:0;
+  padding:0;
+}
+.inner-switch{
+ background-color:lightgrey;
+ position:relative;
+ border-radius:2px;
+ width:1rem;
+ height:1rem;
+ cursor:pointer;
+ transition: all 300ms ease-in-out;
+}
+.inner-switch-active{
+  margin-left:1rem;
+}
+
+
+@media screen and (max-width: 500px){
+
+  .container {
+    top: 10%;
+    
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    
+     left: -10%;
+  }
+}
+
+@media screen and (max-width: 400px){
+
+  .container {
+    top: 10%;
+    
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    
+     left: -20%;
+  }
+}
+@media screen and (max-width: 320px){
+
+  .container {
+    top: 10%;
+    
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+    
+     left: -28%;
+  }
+}
